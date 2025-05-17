@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\admin\\Desktop\\EfCore\\src\\DbOperationWithEfCore\\.vs\\DbOperationWithEfCore\\DbOperationsForEfCore\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E0B4EA27-6B0E-4289-873F-7257ECF7ADB9}|DbOperationsForEfCore.csproj|c:\\users\\admin\\desktop\\efcore\\src\\dboperationwithefcore\\.vs\\dboperationwithefcore\\dboperationsforefcore\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0B4EA27-6B0E-4289-873F-7257ECF7ADB9}|DbOperationsForEfCore.csproj|solutionrelative:controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0B4EA27-6B0E-4289-873F-7257ECF7ADB9}|DbOperationsForEfCore.csproj|c:\\users\\admin\\desktop\\efcore\\src\\dboperationwithefcore\\.vs\\dboperationwithefcore\\dboperationsforefcore\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0B4EA27-6B0E-4289-873F-7257ECF7ADB9}|DbOperationsForEfCore.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0B4EA27-6B0E-4289-873F-7257ECF7ADB9}|DbOperationsForEfCore.csproj|c:\\users\\admin\\desktop\\efcore\\src\\dboperationwithefcore\\.vs\\dboperationwithefcore\\dboperationsforefcore\\data\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0B4EA27-6B0E-4289-873F-7257ECF7ADB9}|DbOperationsForEfCore.csproj|solutionrelative:data\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0B4EA27-6B0E-4289-873F-7257ECF7ADB9}|DbOperationsForEfCore.csproj|c:\\users\\admin\\desktop\\efcore\\src\\dboperationwithefcore\\.vs\\dboperationwithefcore\\dboperationsforefcore\\data\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0B4EA27-6B0E-4289-873F-7257ECF7ADB9}|DbOperationsForEfCore.csproj|solutionrelative:data\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Author.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\EfCore\\src\\DbOperationWithEfCore\\.vs\\DbOperationWithEfCore\\DbOperationsForEfCore\\Data\\Author.cs",
+              "RelativeDocumentMoniker": "Data\\Author.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\EfCore\\src\\DbOperationWithEfCore\\.vs\\DbOperationWithEfCore\\DbOperationsForEfCore\\Data\\Author.cs",
+              "RelativeToolTip": "Data\\Author.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T04:44:46.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\EfCore\\src\\DbOperationWithEfCore\\.vs\\DbOperationWithEfCore\\DbOperationsForEfCore\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\EfCore\\src\\DbOperationWithEfCore\\.vs\\DbOperationWithEfCore\\DbOperationsForEfCore\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAIwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T11:47:56.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\EfCore\\src\\DbOperationWithEfCore\\.vs\\DbOperationWithEfCore\\DbOperationsForEfCore\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BooksController.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\EfCore\\src\\DbOperationWithEfCore\\.vs\\DbOperationWithEfCore\\DbOperationsForEfCore\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "Controllers\\BooksController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAmwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T11:42:55.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\EfCore\\src\\DbOperationWithEfCore\\.vs\\DbOperationWithEfCore\\DbOperationsForEfCore\\Data\\Book.cs",
+              "RelativeDocumentMoniker": "Data\\Book.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\EfCore\\src\\DbOperationWithEfCore\\.vs\\DbOperationWithEfCore\\DbOperationsForEfCore\\Data\\Book.cs",
+              "RelativeToolTip": "Data\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T05:40:44.288Z",
+              "EditorCaption": ""
             }
           ]
         }

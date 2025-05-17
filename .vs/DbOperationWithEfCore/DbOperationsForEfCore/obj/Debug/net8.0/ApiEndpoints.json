@@ -1,0 +1,118 @@
+[
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
+    "Method": "AddNewBookAsync",
+    "RelativePath": "api/Books",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "book",
+        "Type": "DbOperationsForEfCore.Data.Book",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
+    "Method": "updateBookAsync",
+    "RelativePath": "api/Books/{Bookid}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Bookid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "model",
+        "Type": "DbOperationsForEfCore.Data.Book",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
+    "Method": "DeleteBookasync",
+    "RelativePath": "api/Books/{Bookid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Bookid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
+    "Method": "AddBulkBookAsync",
+    "RelativePath": "api/Books/Bulk",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "book",
+        "Type": "System.Collections.Generic.List\u00601[[DbOperationsForEfCore.Data.Book, DbOperationsForEfCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.CurrencyController",
+    "Method": "GetAllCurrencyAsync",
+    "RelativePath": "api/Currencies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.CurrencyController",
+    "Method": "GetCurrenciesByIdasync",
+    "RelativePath": "api/Currencies/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.CurrencyController",
+    "Method": "GetCurrencybyNamessync",
+    "RelativePath": "api/Currencies/{Name}/{Description}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
