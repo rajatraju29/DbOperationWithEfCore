@@ -1,6 +1,7 @@
 ﻿using DbOperationsForEfCore.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DbOperationsForEfCore.Controllers
 {
@@ -8,6 +9,16 @@ namespace DbOperationsForEfCore.Controllers
     [ApiController]
     public class BooksController(AppDbContext appdbcontext) : ControllerBase
     {
+        [HttpGet]
+        public async Task<IActionResult> GetAllBooks()
+        {
+            var bookdata = await appdbcontext.Books.ToListAsync();
+            if (bookdata == null)
+            {
+                return NotFound();
+            }
+            return Ok(bookdata);
+        }
         [HttpPost]
         public async Task<IActionResult> AddNewBookAsync([FromBody] Book book)
         {
