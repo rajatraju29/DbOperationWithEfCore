@@ -1,1 +1,18 @@
-<router-outlet />
+<header>
+  <h1>BookVerse</h1>
+  <nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/books">Books</a>
+    <a routerLink="/about">About</a>
+    <a routerLink="/contact">Contact</a>
+   <a routerLink="/login" routerLinkActive="active">Login</a>
+
+  </nav>
+</header>
+
+<!-- This will render components like HomeComponent, BookComponent, etc. -->
+<router-outlet></router-outlet>
+
+<footer>
+  <p>© 2025 BookVerse. All rights reserved.</p>
+</footer>

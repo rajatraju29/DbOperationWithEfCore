@@ -1,0 +1,34 @@
+<div class="book-list-container">
+  <h2>Book List</h2>
+
+  <table class="book-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>No. of Pages</th>
+        <th>Is Active</th>
+        <th>Created On</th>
+        <th>Language ID</th>
+        <th>Author ID</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of book; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.description }}</td>
+        <td>{{ book.noOfPages }}</td>
+        <td>{{ book.isActive ? 'Yes' : 'No' }}</td>
+        <td>{{ book.createdOn | date:'medium' }}</td>
+        <td>{{ book.languageId }}</td>
+        <td>{{ book.authorId }}</td>
+        <td>
+          <button>Add to Cart</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
