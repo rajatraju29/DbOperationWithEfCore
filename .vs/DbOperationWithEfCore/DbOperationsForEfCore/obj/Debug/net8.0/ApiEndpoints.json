@@ -1,8 +1,50 @@
 [
   {
+    "ContainingType": "DbOperationsForEfCore.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "DbOperationsForEfCore.Data.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "DbOperationsForEfCore.Data.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
+    "Method": "GetAllBooks",
+    "RelativePath": "api/Books",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
     "Method": "AddNewBookAsync",
-    "RelativePath": "api/Books",
+    "RelativePath": "api/Books/AddNewBookAsync",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -17,8 +59,118 @@
   },
   {
     "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
+    "Method": "AddBulkBookAsync",
+    "RelativePath": "api/Books/Bulk",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "book",
+        "Type": "System.Collections.Generic.List\u00601[[DbOperationsForEfCore.Data.Book, DbOperationsForEfCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
+    "Method": "DeleteBookasync",
+    "RelativePath": "api/Books/DeleteBookasync/{Bookid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Bookid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
+    "Method": "PrfileDetailsbyUsername",
+    "RelativePath": "api/Books/PrfileDetailsbyUsername",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Username",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
+    "Method": "PrfileDetailsbyUsername",
+    "RelativePath": "api/Books/ProfileCrud",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Username",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
+    "Method": "RecentBook",
+    "RelativePath": "api/Books/RecentBook",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
+    "Method": "savecontactinfo",
+    "RelativePath": "api/Books/savecontactinfo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "con",
+        "Type": "DbOperationsForEfCore.Data.Contact",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
+    "Method": "thisMonthbook",
+    "RelativePath": "api/Books/thisMonthbook",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
+    "Method": "TotalUsers",
+    "RelativePath": "api/Books/TotalUsers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
     "Method": "updateBookAsync",
-    "RelativePath": "api/Books/{Bookid}",
+    "RelativePath": "api/Books/updateBookAsync/{Bookid}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -38,31 +190,15 @@
   },
   {
     "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
-    "Method": "DeleteBookasync",
-    "RelativePath": "api/Books/{Bookid}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Bookid",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DbOperationsForEfCore.Controllers.BooksController",
-    "Method": "AddBulkBookAsync",
-    "RelativePath": "api/Books/Bulk",
+    "Method": "UpdateProfiles",
+    "RelativePath": "api/Books/UpdateProfiles",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "book",
-        "Type": "System.Collections.Generic.List\u00601[[DbOperationsForEfCore.Data.Book, DbOperationsForEfCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Name": "prof",
+        "Type": "DbOperationsForEfCore.Data.ProfileDto",
         "IsRequired": true
       }
     ],

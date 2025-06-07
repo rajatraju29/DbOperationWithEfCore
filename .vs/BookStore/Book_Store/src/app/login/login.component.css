@@ -1,42 +1,72 @@
-.login-container {
-  width: 300px;
-  margin: 50px auto;
+/* Overall form container */
+.login-form {
+  width: 320px;
+  margin: 80px auto;
+  padding: 30px;
   border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 4px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.login-container h2 {
+/* Title */
+.login-form h1 {
   text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
 }
 
-.login-container label {
+/* Form group styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Labels */
+.form-group label {
   display: block;
-  margin: 10px 0 5px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #555;
 }
 
-.login-container input {
+/* Inputs */
+.form-group input {
   width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s;
 }
 
-.login-container .error {
-  color: red;
-  font-size: 0.8em;
+/* Input focus */
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
-.login-container button {
+/* Button styling */
+.login-form button {
   width: 100%;
   padding: 10px;
-  margin-top: 15px;
   background-color: #007bff;
   border: none;
-  color: #fff;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.login-container button:disabled {
-  background-color: #ccc;
+/* Button hover */
+.login-form button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Button disabled */
+.login-form button:disabled {
+  background-color: #cccccc;
   cursor: not-allowed;
 }

@@ -70,6 +70,9 @@ namespace DbOperationsForEfCore.Migrations
                     b.Property<int>("NoOfPages")
                         .HasColumnType("int");
 
+                    b.Property<int?>("Statusid")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -79,6 +82,8 @@ namespace DbOperationsForEfCore.Migrations
                     b.HasIndex("AuthorId");
 
                     b.HasIndex("LanguageId");
+
+                    b.HasIndex("Statusid");
 
                     b.ToTable("Books");
                 });
@@ -107,6 +112,31 @@ namespace DbOperationsForEfCore.Migrations
                     b.HasIndex("CurrencyId");
 
                     b.ToTable("BookPrices");
+                });
+
+            modelBuilder.Entity("DbOperationsForEfCore.Data.Contact", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("DbOperationsForEfCore.Data.Currency", b =>
@@ -203,6 +233,80 @@ namespace DbOperationsForEfCore.Migrations
                         });
                 });
 
+            modelBuilder.Entity("DbOperationsForEfCore.Data.Profile", b =>
+                {
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Mobile")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ProfileId");
+
+                    b.ToTable("Profiles");
+                });
+
+            modelBuilder.Entity("DbOperationsForEfCore.Data.Status", b =>
+                {
+                    b.Property<int>("Statusid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Statusid"));
+
+                    b.Property<string>("StatusDesc")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Statusid");
+
+                    b.ToTable("Statuses");
+                });
+
+            modelBuilder.Entity("DbOperationsForEfCore.Data.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordSalt")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("profileid")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("DbOperationsForEfCore.Data.Book", b =>
                 {
                     b.HasOne("DbOperationsForEfCore.Data.Author", "Author")
@@ -215,9 +319,15 @@ namespace DbOperationsForEfCore.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("DbOperationsForEfCore.Data.Status", "Status")
+                        .WithMany("Books")
+                        .HasForeignKey("Statusid");
+
                     b.Navigation("Author");
 
                     b.Navigation("Language");
+
+                    b.Navigation("Status");
                 });
 
             modelBuilder.Entity("DbOperationsForEfCore.Data.BookPrice", b =>
@@ -239,6 +349,17 @@ namespace DbOperationsForEfCore.Migrations
                     b.Navigation("Currency");
                 });
 
+            modelBuilder.Entity("DbOperationsForEfCore.Data.Profile", b =>
+                {
+                    b.HasOne("DbOperationsForEfCore.Data.User", "User")
+                        .WithOne("Profile")
+                        .HasForeignKey("DbOperationsForEfCore.Data.Profile", "ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("DbOperationsForEfCore.Data.Currency", b =>
                 {
                     b.Navigation("BookPrice");
@@ -247,6 +368,17 @@ namespace DbOperationsForEfCore.Migrations
             modelBuilder.Entity("DbOperationsForEfCore.Data.Language", b =>
                 {
                     b.Navigation("Books");
+                });
+
+            modelBuilder.Entity("DbOperationsForEfCore.Data.Status", b =>
+                {
+                    b.Navigation("Books");
+                });
+
+            modelBuilder.Entity("DbOperationsForEfCore.Data.User", b =>
+                {
+                    b.Navigation("Profile")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

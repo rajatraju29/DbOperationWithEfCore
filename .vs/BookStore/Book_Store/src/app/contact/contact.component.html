@@ -1,0 +1,31 @@
+<!-- contact-us.component.html -->
+<section class="contact-container">
+  <h2>Contact Us</h2>
+
+  <form [formGroup]="contactForm" (ngSubmit)="add()">
+    <label>Name</label>
+    <input type="text" formControlName="name" />
+   
+
+    <label>Email</label>
+    <input type="email" formControlName="email" />
+  
+
+    <label>Message</label>
+    <textarea rows="5" formControlName="message"></textarea>
+    
+    <button type="submit" >Send Message</button>
+  </form>
+
+  <div class="map-container">
+    <iframe
+      width="100%"
+      height="300"
+      frameborder="0"
+      style="border:0"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed/v1/place?q=Bookstore,Bangalore,India&key=YOUR_GOOGLE_MAPS_API_KEY"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>

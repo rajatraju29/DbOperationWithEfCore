@@ -1,6 +1,8 @@
 <div class="book-list-container">
   <h2>Book List</h2>
-
+<button (click)="openAddBookModal()" class="btn btn-success">
+  Add Book
+</button>
   <table class="book-table">
     <thead>
       <tr>
@@ -26,9 +28,74 @@
         <td>{{ book.languageId }}</td>
         <td>{{ book.authorId }}</td>
         <td>
-          <button>Add to Cart</button>
+          <button (click)="openEditModal(book)">
+            <i class="fas fa-edit" style="color:rgb(78, 30, 210)"></i>
+          </button>
+
+          &nbsp;
+          <button (click)="DeleteBooks(book.id)">
+            <i class="fas fa-trash" style="color: red;"></i>
+          </button>
         </td>
       </tr>
     </tbody>
   </table>
+</div>
+
+<!-- Edit Modal -->
+
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <form [formGroup]="editForm" (ngSubmit)="submitBook()" class="modal-content shadow rounded-4 border-0">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title" id="editModalLabel">Edit Book Details</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <input type="hidden" formControlName="id">
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="editTitle" class="form-label fw-semibold">Title</label>
+            <input type="text" id="editTitle" class="form-control form-control-sm" formControlName="title">
+          </div>
+
+          <div class="col-md-6">
+            <label for="editNoOfPages" class="form-label fw-semibold">No. of Pages</label>
+            <input type="number" id="editNoOfPages" class="form-control form-control-sm" formControlName="noOfPages">
+          </div>
+
+          <div class="col-12">
+            <label for="editDescription" class="form-label fw-semibold">Description</label>
+            <textarea id="editDescription" class="form-control form-control-sm" formControlName="description" rows="3"></textarea>
+          </div>
+
+          <div class="col-md-6">
+            <label for="editCreatedOn" class="form-label fw-semibold">Created On</label>
+            <input type="date" id="editCreatedOn" class="form-control form-control-sm" formControlName="createdOn">
+          </div>
+
+          <div class="col-md-6">
+            <label for="editLanguageId" class="form-label fw-semibold">Language ID</label>
+            <input type="text" id="editLanguageId" class="form-control form-control-sm" formControlName="languageId">
+          </div>
+
+          <div class="col-12 mt-2">
+            <div class="form-check">
+              <input type="checkbox" id="editIsActive" class="form-check-input" formControlName="isActive">
+              <label for="editIsActive" class="form-check-label">Is Active</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer bg-light rounded-bottom-4">
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">
+          <i class="bi bi-x-circle"></i> Close
+        </button>
+        <button  type="submit" class="btn btn-sm btn-primary">
+          <i class="bi bi-save"></i> Save changes
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

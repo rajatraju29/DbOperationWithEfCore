@@ -1,0 +1,106 @@
+<div class="dashboard">
+  <aside class="sidebar">
+    <h2>📚 BookStore</h2>
+    <nav>
+      <ul>
+        <li><i class="fas fa-chart-line"></i> Dashboard</li>
+        <li><i class="fas fa-book"></i> Books</li>
+        <li><i class="fas fa-shopping-cart"></i> Orders</li>
+        <li><i class="fas fa-users"></i> Customers</li>
+        <li><i class="fas fa-cog"></i> Settings</li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <button class="btn btn-primary" (click)="getBooksThisMonth()"> This Month</button>
+
+    <header>
+      <h1>Dashboard</h1> 
+
+      <div class="profile">
+        <i class="fas fa-bell"></i>
+        <span>Admin</span>
+      </div>
+    </header>
+
+    <section class="cards">
+      <div class="card">
+        <h3>Total Books</h3>
+        <p>3,450</p>
+      </div>
+      <div class="card">
+        <h3>Total Sales</h3>
+        <p>$154,200</p>
+      </div>
+      <div class="card">
+        <h3>Total Orders</h3>
+        <p>1,320</p>
+      </div>
+      <div class="card">
+        <h3>Total Customers</h3>
+        <p>{{totalbook}}</p>
+      </div>
+    </section>
+
+    <section class="table-section">
+      <h2>Recent Orders</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>title</th>
+            <th>Description</th>
+            <th>no OfPages</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of Recentbook">
+          
+            <td>{{ book.title }}</td>
+            <td>{{ book.description }}</td>
+            <td>{{ book.noOfPages }}</td>
+            <td>{{ book.createdOn }}</td>
+            <td>{{ book.statusDesc }}</td>
+           
+        </tbody>
+      </table>
+    </section>
+  </main>
+</div>
+
+!-- <!-- books-this-month.component.html -->
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="booksModal" tabindex="-1" aria-labelledby="booksModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="booksModalLabel">This Month</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of books">
+              <td>{{ book.id }}</td>
+              <td>{{ book.title }}</td>
+              <td>{{ book.status?.name || 'N/A' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

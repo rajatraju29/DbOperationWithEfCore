@@ -24,6 +24,12 @@ namespace DbOperationsForEfCore.Data
                new Currency() { id = 4, Title = "Urdu", Description = "Urdu" }
                );
             //base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Profile>()
+        .HasOne(p => p.User)
+        .WithOne(u => u.Profile)
+        .HasForeignKey<Profile>(p => p.ProfileId) // Tell EF Core: Profile is dependent
+        .IsRequired();
         }
 
         public DbSet<Book> Books { get; set; }
@@ -32,6 +38,11 @@ namespace DbOperationsForEfCore.Data
         public DbSet<Currency> Currencies { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<User> Users { get; set; }
- 
+        public DbSet<Status> Statuses { get; set; }
+        public DbSet<Profile> Profiles { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+
+
+
     }
 }

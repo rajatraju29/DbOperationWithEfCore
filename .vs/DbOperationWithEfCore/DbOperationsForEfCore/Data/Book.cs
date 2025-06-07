@@ -12,7 +12,10 @@
         public Language? Language { get; set; }
         public int? AuthorId { get; set; }
         public Author? Author { get; set; }
-    
+         //Foreign key
+        public int? Statusid { get; set; }
+        public Status Status { get; set; }
+
 
 
     }

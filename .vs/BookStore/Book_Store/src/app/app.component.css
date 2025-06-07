@@ -85,3 +85,90 @@ footer {
   padding: 1rem;
   margin-top: 2rem;
 }
+/* Header container */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e40af; /* nice blue */
+  padding: 10px 20px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Logo / title */
+header h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Navigation menu */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Nav links */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #2563eb;
+}
+
+/* Profile card container */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #2563eb;
+  padding: 6px 12px;
+  border-radius: 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Profile image */
+.profile-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+}
+
+/* Welcome text */
+.profile-card span {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  user-select: none;
+}
+
+/* Logout button */
+.profile-card button {
+  background-color: transparent;
+  border: 1.5px solid white;
+  color: white;
+  padding: 4px 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.profile-card button:hover {
+  background-color: white;
+  color: #2563eb;
+}
+

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BookService } from '../services/book.service';
 import { Router } from '@angular/router';
+import { AuthServiceService } from '../auth-service.service';
 
 @Component({
   selector: 'app-login',
@@ -13,27 +14,28 @@ export class LoginComponent {
   loginForm!: FormGroup;
 
 
-  constructor(private fb:FormBuilder,private bookService:BookService,private router:Router){
+  constructor(private fb:FormBuilder,private bookService:BookService,private router:Router,private authService: AuthServiceService){
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
-    username = '';
-  password = '';
+   
  onLogin() {
-  debugger
-    this.bookService.login(this.username, this.password)
-      .subscribe({
-        next: (res) => {
-          localStorage.setItem('token', res.token);
-          alert('Login successful!');
-          this.router.navigate(['/dashboard']);
-        },
-        error: () => {
-          alert('Invalid username or password.');
-        }
-      });
+
+    const { username, password } = this.loginForm.value;
+     if (!username || !password) {
+    alert('Username and password are required.');
+    return;
+  }
+    this.bookService.login(username, password).subscribe({
+  next: (res) => {
+    this.authService.login(res.token);  // 🔁 this updates user$ stream
+    alert('Login successful!');
+    this.router.navigate(['/dashboard']);
+  }
+});
+
   }
  
 }

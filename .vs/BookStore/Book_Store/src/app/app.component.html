@@ -5,12 +5,81 @@
     <a routerLink="/books">Books</a>
     <a routerLink="/about">About</a>
     <a routerLink="/contact">Contact</a>
-   <a routerLink="/login" routerLinkActive="active">Login</a>
+    <ng-container *ngIf="!isLoggedIn; else profileCard">
+      <a routerLink="/login" routerLinkActive="active">Login</a>
+    </ng-container>
+    <ng-template #profileCard>
+      <div class="profile-card">
+        <img src="https://i.pravatar.cc/40" alt="Profile" class="profile-img" />
+        <span (click)="loadProfileDetails()">Welcome, {{ username }}!</span>
 
+        <button (click)="logout()">Logout</button>
+      </div>
+    </ng-template>
   </nav>
 </header>
+<!-- Trigger Button -->
+<button class="btn btn-primary" *ngIf="isLoggedIn" (click)="openModal()">View Profile Info</button>
 
-<!-- This will render components like HomeComponent, BookComponent, etc. -->
+<!-- Modal -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="profileModalLabel">User Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form [formGroup]="profiledataForm">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label><strong>Username:</strong></label>
+            <input type="text" class="form-control" formControlName="username" />
+          </div>
+
+          <div class="mb-3">
+            <label><strong>Name:</strong></label>
+            <input type="text" class="form-control" formControlName="name" />
+          </div>
+          <!-- <div class="mb-3">
+            <label><strong>Email:</strong></label>
+            <input type="text" class="form-control" formControlName="email" />
+          </div> -->
+
+          <div class="mb-3">
+            <label><strong>Mobile:</strong></label>
+            <input type="text" class="form-control" formControlName="mobile" />
+          </div>
+
+          <div class="mb-3">
+            <label><strong>Address:</strong></label>
+            <textarea class="form-control" formControlName="address"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label><strong>City:</strong></label>
+            <input type="text" class="form-control" formControlName="city" />
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="updateProfile()">Update Profile</button>
+        </div>
+      </form>
+
+      <!-- <div class="modal-body" *ngIf="Profiledetails">
+        <p><strong>Username:</strong> {{ Profiledetails?.username }}</p>
+        <p><strong>Name:</strong> {{ Profiledetails?.name }}</p>
+        <p><strong>Mobile:</strong> {{ Profiledetails?.mobile }}</p>
+        <p><strong>Address:</strong> {{ Profiledetails?.address }}</p>
+        <p><strong>City:</strong> {{ Profiledetails?.city }}</p>
+      </div> -->
+
+    </div>
+  </div>
+</div>
+
 <router-outlet></router-outlet>
 
 <footer>
